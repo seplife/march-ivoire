@@ -1,0 +1,333 @@
+[
+  {
+    "id": "ORDER_1705312800_a1b2c3d4",
+    "customerInfo": {
+      "firstName": "Kouadio",
+      "lastName": "Yao",
+      "email": "kouadio.yao@gmail.com",
+      "phone": "+225 01 02 03 04 05",
+      "address": "Rue 12, Quartier Biétry, Commune de Marcory",
+      "city": "Abidjan",
+      "postalCode": "08 BP 2044",
+      "deliveryNotes": "Deuxième étage, porte bleue"
+    },
+    "items": [
+      {
+        "productId": 1,
+        "productTitle": "Bananes Plantain Bio",
+        "quantity": 3,
+        "unitPrice": 2500,
+        "totalPrice": 7500
+      },
+      {
+        "productId": 3,
+        "productTitle": "Piment Rouge Séché",
+        "quantity": 2,
+        "unitPrice": 850,
+        "totalPrice": 1700
+      }
+    ],
+    "subtotal": 9200,
+    "shipping": 2000,
+    "taxes": 0,
+    "total": 11200,
+    "paymentMethod": "orange_money",
+    "paymentPhone": "+225 01 02 03 04 05",
+    "status": "completed",
+    "paymentStatus": "paid",
+    "transaction_id": "TXN_1705312900_ORM123456",
+    "payment_method": "Orange Money",
+    "paid_at": "2025-01-15T14:35:00Z",
+    "createdAt": "2025-01-15T14:20:00Z",
+    "updatedAt": "2025-01-15T14:35:00Z",
+    "ipAddress": "196.200.96.10",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X)",
+    "deliveryStatus": "pending",
+    "estimatedDelivery": "2025-01-17T10:00:00Z",
+    "notes": "Commande traitée avec succès",
+    "payment_details": {
+      "operator": "Orange Money",
+      "customer_phone": "+225 01 02 03 04 05",
+      "reference": "ORM123456",
+      "fee": 100
+    }
+  },
+  {
+    "id": "ORDER_1705226400_b2c3d4e5",
+    "customerInfo": {
+      "firstName": "Aminata",
+      "lastName": "Traoré",
+      "email": "aminata.traore@yahoo.fr",
+      "phone": "+225 05 06 07 08 09",
+      "address": "Cocody Riviera 3, Villa 45",
+      "city": "Abidjan",
+      "postalCode": "01 BP 5789",
+      "deliveryNotes": "Livraison entre 9h et 17h"
+    },
+    "items": [
+      {
+        "productId": 4,
+        "productTitle": "Masque Baoulé Traditionnel",
+        "quantity": 1,
+        "unitPrice": 35000,
+        "totalPrice": 35000
+      }
+    ],
+    "subtotal": 35000,
+    "shipping": 2000,
+    "taxes": 0,
+    "total": 37000,
+    "paymentMethod": "mtn_money",
+    "paymentPhone": "+225 05 06 07 08 09",
+    "status": "completed",
+    "paymentStatus": "paid",
+    "transaction_id": "TXN_1705226500_MTN789012",
+    "payment_method": "MTN Money",
+    "paid_at": "2025-01-14T14:21:40Z",
+    "createdAt": "2025-01-14T14:20:00Z",
+    "updatedAt": "2025-01-14T16:30:00Z",
+    "ipAddress": "196.200.96.25",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "deliveryStatus": "delivered",
+    "deliveredAt": "2025-01-15T11:30:00Z",
+    "notes": "Livraison effectuée avec succès",
+    "payment_details": {
+      "operator": "MTN Money",
+      "customer_phone": "+225 05 06 07 08 09",
+      "reference": "MTN789012",
+      "fee": 370
+    }
+  },
+  {
+    "id": "ORDER_1705140000_c3d4e5f6",
+    "customerInfo": {
+      "firstName": "Jean-Baptiste",
+      "lastName": "Koné",
+      "email": "jb.kone@outlook.com",
+      "phone": "+225 07 08 09 10 11",
+      "address": "Yopougon Niangon Sud, Rue Principale",
+      "city": "Abidjan",
+      "postalCode": "23 BP 1456",
+      "deliveryNotes": ""
+    },
+    "items": [
+      {
+        "productId": 7,
+        "productTitle": "Mangues Kent Bio",
+        "quantity": 2,
+        "unitPrice": 3200,
+        "totalPrice": 6400
+      },
+      {
+        "productId": 9,
+        "productTitle": "Gingembre Frais",
+        "quantity": 1,
+        "unitPrice": 1200,
+        "totalPrice": 1200
+      }
+    ],
+    "subtotal": 7600,
+    "shipping": 2000,
+    "taxes": 0,
+    "total": 9600,
+    "paymentMethod": "wave",
+    "paymentPhone": "+225 07 08 09 10 11",
+    "status": "processing",
+    "paymentStatus": "paid",
+    "transaction_id": "TXN_1705140100_WAV345678",
+    "payment_method": "Wave",
+    "paid_at": "2025-01-13T14:21:40Z",
+    "createdAt": "2025-01-13T14:20:00Z",
+    "updatedAt": "2025-01-14T09:15:00Z",
+    "ipAddress": "196.200.96.42",
+    "userAgent": "Mozilla/5.0 (Android 13; Mobile; rv:109.0) Gecko/109.0",
+    "deliveryStatus": "preparing",
+    "notes": "Commande en cours de préparation",
+    "payment_details": {
+      "operator": "Wave",
+      "customer_phone": "+225 07 08 09 10 11",
+      "reference": "WAV345678",
+      "fee": 96
+    }
+  },
+  {
+    "id": "ORDER_1705053600_d4e5f6g7",
+    "customerInfo": {
+      "firstName": "Fatou",
+      "lastName": "Ouattara",
+      "email": "fatou.ouattara@gmail.com",
+      "phone": "+225 01 23 45 67 89",
+      "address": "Bouaké, Quartier Air France",
+      "city": "Bouaké",
+      "postalCode": "",
+      "deliveryNotes": "Appeler avant la livraison"
+    },
+    "items": [
+      {
+        "productId": 2,
+        "productTitle": "Igname Blanche Premium",
+        "quantity": 4,
+        "unitPrice": 1800,
+        "totalPrice": 7200
+      },
+      {
+        "productId": 8,
+        "productTitle": "Tomates Fraîches",
+        "quantity": 2,
+        "unitPrice": 1500,
+        "totalPrice": 3000
+      }
+    ],
+    "subtotal": 10200,
+    "shipping": 3000,
+    "taxes": 0,
+    "total": 13200,
+    "paymentMethod": "moov_money",
+    "paymentPhone": "+225 01 23 45 67 89",
+    "status": "pending",
+    "paymentStatus": "pending",
+    "createdAt": "2025-01-12T14:20:00Z",
+    "updatedAt": "2025-01-12T14:20:00Z",
+    "ipAddress": "196.200.96.78",
+    "userAgent": "Mozilla/5.0 (Linux; Android 11; SM-A515F)",
+    "deliveryStatus": "pending",
+    "notes": "En attente du paiement"
+  },
+  {
+    "id": "ORDER_1704967200_e5f6g7h8",
+    "customerInfo": {
+      "firstName": "Michel",
+      "lastName": "Diabaté",
+      "email": "michel.diabate@yahoo.com",
+      "phone": "+225 09 87 65 43 21",
+      "address": "Daloa, Quartier Tazibouo",
+      "city": "Daloa",
+      "postalCode": "",
+      "deliveryNotes": "Maison avec portail vert"
+    },
+    "items": [
+      {
+        "productId": 5,
+        "productTitle": "Kente Traditionnel Ashanti",
+        "quantity": 1,
+        "unitPrice": 85000,
+        "totalPrice": 85000
+      }
+    ],
+    "subtotal": 85000,
+    "shipping": 4000,
+    "taxes": 0,
+    "total": 89000,
+    "paymentMethod": "orange_money",
+    "paymentPhone": "+225 09 87 65 43 21",
+    "status": "payment_failed",
+    "paymentStatus": "failed",
+    "createdAt": "2025-01-11T10:20:00Z",
+    "updatedAt": "2025-01-11T10:25:00Z",
+    "ipAddress": "196.200.96.155",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+    "deliveryStatus": "cancelled",
+    "failure_reason": "Solde insuffisant",
+    "failed_at": "2025-01-11T10:25:00Z",
+    "notes": "Échec de paiement - Solde insuffisant"
+  },
+  {
+    "id": "ORDER_1704880800_f6g7h8i9",
+    "customerInfo": {
+      "firstName": "Adjoua",
+      "lastName": "Kouassi",
+      "email": "adjoua.kouassi@hotmail.com",
+      "phone": "+225 02 34 56 78 90",
+      "address": "Yamoussoukro, Quartier Habitat",
+      "city": "Yamoussoukro",
+      "postalCode": "BP 1234",
+      "deliveryNotes": ""
+    },
+    "items": [
+      {
+        "productId": 10,
+        "productTitle": "Djembé Artisanal",
+        "quantity": 1,
+        "unitPrice": 45000,
+        "totalPrice": 45000
+      },
+      {
+        "productId": 15,
+        "productTitle": "Curcuma en Poudre",
+        "quantity": 3,
+        "unitPrice": 950,
+        "totalPrice": 2850
+      }
+    ],
+    "subtotal": 47850,
+    "shipping": 3000,
+    "taxes": 0,
+    "total": 50850,
+    "paymentMethod": "mtn_money",
+    "paymentPhone": "+225 02 34 56 78 90",
+    "status": "completed",
+    "paymentStatus": "paid",
+    "transaction_id": "TXN_1704880900_MTN456789",
+    "payment_method": "MTN Money",
+    "paid_at": "2025-01-10T10:21:40Z",
+    "createdAt": "2025-01-10T10:20:00Z",
+    "updatedAt": "2025-01-12T14:00:00Z",
+    "ipAddress": "196.200.96.98",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+    "deliveryStatus": "delivered",
+    "deliveredAt": "2025-01-12T14:00:00Z",
+    "notes": "Commande livrée avec succès à Yamoussoukro",
+    "payment_details": {
+      "operator": "MTN Money",
+      "customer_phone": "+225 02 34 56 78 90",
+      "reference": "MTN456789",
+      "fee": 508
+    }
+  },
+  {
+    "id": "ORDER_1704794400_g7h8i9j0",
+    "customerInfo": {
+      "firstName": "Ibrahim",
+      "lastName": "Fofana",
+      "email": "ibrahim.fofana@gmail.com",
+      "phone": "+225 08 76 54 32 10",
+      "address": "Korhogo, Quartier Résidentiel",
+      "city": "Korhogo",
+      "postalCode": "",
+      "deliveryNotes": "Livraison le matin de préférence"
+    },
+    "items": [
+      {
+        "productId": 13,
+        "productTitle": "Ananas Victoria",
+        "quantity": 5,
+        "unitPrice": 2800,
+        "totalPrice": 14000
+      }
+    ],
+    "subtotal": 14000,
+    "shipping": 5000,
+    "taxes": 0,
+    "total": 19000,
+    "paymentMethod": "wave",
+    "paymentPhone": "+225 08 76 54 32 10",
+    "status": "completed",
+    "paymentStatus": "paid",
+    "transaction_id": "TXN_1704794500_WAV567890",
+    "payment_method": "Wave",
+    "paid_at": "2025-01-09T10:21:40Z",
+    "createdAt": "2025-01-09T10:20:00Z",
+    "updatedAt": "2025-01-10T16:30:00Z",
+    "ipAddress": "196.200.96.210",
+    "userAgent": "Mozilla/5.0 (Linux; Android 12; Pixel 6)",
+    "deliveryStatus": "delivered",
+    "deliveredAt": "2025-01-10T08:45:00Z",
+    "notes": "Livraison matinale effectuée comme demandé",
+    "payment_details": {
+      "operator": "Wave",
+      "customer_phone": "+225 08 76 54 32 10",
+      "reference": "WAV567890",
+      "fee": 190
+    }
+  }
+]

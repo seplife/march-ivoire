@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/css/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://marcheiivoire.com/</loc>
+    <lastmod>2025-01-15T15:30:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/assets/images/logo-512.png</image:loc>
+      <image:title>MarchéIvoire - Logo</image:title>
+      <image:caption>Marketplace ivoirienne - Achetez des produits locaux avec Mobile Money</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Section Produits (ancre) -->
+  <url>
+    <loc>https://marcheiivoire.com/#produits</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Section Catégories (ancre) -->
+  <url>
+    <loc>https://marcheiivoire.com/#categories</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Pages légales -->
+  <url>
+    <loc>https://marcheiivoire.com/privacy.html</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/terms.html</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/returns.html</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/shipping.html</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/faq.html</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/about.html</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/contact.html</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Pages de catégories (générées dynamiquement) -->
+  <url>
+    <loc>https://marcheiivoire.com/category/fruits</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/assets/images/categories/fruits.jpg</image:loc>
+      <image:title>Fruits frais de Côte d'Ivoire</image:title>
+      <image:caption>Découvrez notre sélection de fruits frais et biologiques</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/category/legumes</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/assets/images/categories/legumes.jpg</image:loc>
+      <image:title>Légumes frais locaux</image:title>
+      <image:caption>Légumes cultivés localement en Côte d'Ivoire</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/category/epices</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/assets/images/categories/epices.jpg</image:loc>
+      <image:title>Épices traditionnelles</image:title>
+      <image:caption>Épices et aromates traditionnels de Côte d'Ivoire</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/category/artisanat</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/assets/images/categories/artisanat.jpg</image:loc>
+      <image:title>Artisanat ivoirien</image:title>
+      <image:caption>Objets d'art et artisanat traditionnel de Côte d'Ivoire</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/category/vetements</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/assets/images/categories/vetements.jpg</image:loc>
+      <image:title>Vêtements traditionnels</image:title>
+      <image:caption>Vêtements traditionnels et modernes de Côte d'Ivoire</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/category/electronique</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/assets/images/categories/electronique.jpg</image:loc>
+      <image:title>Électronique et high-tech</image:title>
+      <image:caption>Appareils électroniques et accessoires high-tech</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Produits populaires avec images -->
+  <url>
+    <loc>https://marcheiivoire.com/product/bananes-plantain-bio</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/bananes-plantain.jpg</image:loc>
+      <image:title>Bananes Plantain Bio</image:title>
+      <image:caption>Bananes plantain fraîches et biologiques, cultivées localement</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/product/igname-blanche-premium</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/igname-blanche.jpg</image:loc>
+      <image:title>Igname Blanche Premium</image:title>
+      <image:caption>Igname blanche de première qualité pour vos plats traditionnels</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/product/piment-rouge-seche</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/piment-rouge.jpg</image:loc>
+      <image:title>Piment Rouge Séché</image:title>
+      <image:caption>Piment rouge séché de qualité supérieure du nord de la Côte d'Ivoire</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/product/masque-baoule-traditionnel</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/masque-baoule.jpg</image:loc>
+      <image:title>Masque Baoulé Traditionnel</image:title>
+      <image:caption>Masque artisanal baoulé sculpté à la main par des artisans locaux</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/product/kente-traditionnel-ashanti</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/kente-ashanti.jpg</image:loc>
+      <image:title>Kente Traditionnel Ashanti</image:title>
+      <image:caption>Tissu kente authentique tissé à la main selon les traditions ashanti</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/product/smartphone-tecno-spark-10</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/tecno-spark10.jpg</image:loc>
+      <image:title>Smartphone Tecno Spark 10</image:title>
+      <image:caption>Smartphone Tecno Spark 10 avec écran 6.6 pouces et garantie 1 an</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/product/mangues-kent-bio</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/mangues-kent.jpg</image:loc>
+      <image:title>Mangues Kent Bio</image:title>
+      <image:caption>Mangues Kent biologiques juteuses et sucrées de nos vergers</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/product/djembe-artisanal</loc>
+    <lastmod>2025-01-15T14:20:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/products/djembe-artisanal.jpg</image:loc>
+      <image:title>Djembé Artisanal</image:title>
+      <image:caption>Djembé traditionnel sculpté dans du bois de lenke avec peau de chèvre</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Pages de villes/régions (pour le SEO local) -->
+  <url>
+    <loc>https://marcheiivoire.com/abidjan</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/bouake</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/yamoussoukro</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/daloa</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/korhogo</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/san-pedro</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Pages spéciales -->
+  <url>
+    <loc>https://marcheiivoire.com/promotions</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/nouveautes</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/bestsellers</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/mobile-money</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/guide-achat</loc>
+    <lastmod>2025-01-15T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Blog/Articles (si applicable) -->
+  <url>
+    <loc>https://marcheiivoire.com/blog</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <mobile:mobile/>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/blog/fruits-saison-cote-ivoire</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/blog/fruits-saison.jpg</image:loc>
+      <image:title>Fruits de saison en Côte d'Ivoire</image:title>
+      <image:caption>Guide complet des fruits de saison en Côte d'Ivoire</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/blog/artisanat-ivoirien-authentique</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/blog/artisanat-ivoirien.jpg</image:loc>
+      <image:title>L'artisanat ivoirien authentique</image:title>
+      <image:caption>Découvrez la richesse de l'artisanat traditionnel ivoirien</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/blog/paiement-mobile-money-guide</loc>
+    <lastmod>2025-01-15T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://marcheiivoire.com/uploads/blog/mobile-money-guide.jpg</image:loc>
+      <image:title>Guide du paiement Mobile Money</image:title>
+      <image:caption>Comment utiliser Mobile Money pour vos achats en ligne</image:caption>
+    </image:image>
+  </url>
+
+  <!-- API endpoints publics (pour les développeurs) -->
+  <url>
+    <loc>https://marcheiivoire.com/api/products</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/api/categories</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Fichiers feed -->
+  <url>
+    <loc>https://marcheiivoire.com/feed.xml</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://marcheiivoire.com/products.rss</loc>
+    <lastmod>2025-01-15T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>
+
+<!-- 
+  Sitemap généré automatiquement pour MarchéIvoire
+  Total des URLs: ~35 pages principales
+  Dernière mise à jour: 2025-01-15T15:30:00+00:00
+  
+  Notes pour les moteurs de recherche:
+  - Site optimisé mobile-first
+  - Images avec alt text et métadonnées
+  - Contenu en français (fr-FR)
+  - Géolocalisation: Côte d'Ivoire
+  - E-commerce avec produits locaux
+  - Paiement Mobile Money
+  
+  Soumission recommandée:
+  - Google Search Console
+  - Bing Webmaster Tools
+  - Yandex Webmaster
+  
+  Pour une indexation optimale:
+  1. Vérifier que robots.txt autorise l'accès
+  2. Configurer Google Analytics et Search Console
+  3. Créer des sitemaps spécialisés si nécessaire:
+     - sitemap-products.xml (pour les produits)
+     - sitemap-images.xml (pour les images)
+     - sitemap-news.xml (pour le blog)
+-->

@@ -1,0 +1,189 @@
+# robots.txt pour MarchéIvoire
+# Marketplace ivoirienne - https://marcheiivoire.com
+
+# Règles générales pour tous les robots
+User-agent: *
+
+# Pages autorisées (crawl autorisé)
+Allow: /
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /uploads/products/
+Allow: /uploads/thumbs/
+
+# Pages interdites (pas d'indexation)
+Disallow: /admin/
+Disallow: /data/
+Disallow: /admin/api.php
+Disallow: /admin/webhook.php
+Disallow: /admin/login.php
+Disallow: /checkout.html
+Disallow: /order-confirmation.html
+Disallow: /track-order.html
+
+# Fichiers sensibles
+Disallow: *.json$
+Disallow: *.log$
+Disallow: *.sql$
+Disallow: *.bak$
+Disallow: /config.php
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /.git/
+
+# Paramètres URL à éviter
+Disallow: /*?*session*
+Disallow: /*?*token*
+Disallow: /*?*api_key*
+Disallow: /*?*debug*
+Disallow: /*?*admin*
+
+# Versions mobile et amp (si applicable)
+Allow: /amp/
+Allow: /m/
+
+# Règles spécifiques pour les principaux moteurs de recherche
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Crawl-delay: 1
+
+# Googlebot pour images
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /uploads/products/
+Allow: /uploads/thumbs/
+Disallow: /admin/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Crawl-delay: 2
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Crawl-delay: 2
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Crawl-delay: 3
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+
+# Facebook (pour les aperçus de liens)
+User-agent: facebookexternalhit
+Allow: /
+Allow: /assets/images/
+Disallow: /admin/
+
+# Twitter (pour les Twitter Cards)
+User-agent: Twitterbot
+Allow: /
+Allow: /assets/images/
+Disallow: /admin/
+
+# WhatsApp (pour les aperçus de liens)
+User-agent: WhatsApp
+Allow: /
+Allow: /assets/images/
+Disallow: /admin/
+
+# Robots de prix et comparateurs (autorisés)
+User-agent: PriceGrabber
+Allow: /
+Allow: /#produits
+Disallow: /admin/
+
+User-agent: Shopzilla
+Allow: /
+Allow: /#produits
+Disallow: /admin/
+
+# Règles pour les robots malveillants et spammeurs
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# Robots de scraping agressifs
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: LinkpadBot
+Disallow: /
+
+User-agent: ScreamingFrogSEOSpider
+Crawl-delay: 10
+
+# Robots d'archivage (autorisés avec limitations)
+User-agent: ia_archiver
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Crawl-delay: 5
+
+User-agent: archive.org_bot
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Crawl-delay: 5
+
+# Robots académiques et de recherche
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+
+# Autres robots utiles
+User-agent: PinterestBot
+Allow: /
+Allow: /assets/images/
+Allow: /uploads/products/
+Disallow: /admin/
+
+User-agent: LinkedInBot
+Allow: /
+Allow: /assets/images/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://marcheiivoire.com/sitemap.xml
+
+# Informations supplémentaires
+# Site web: https://marcheiivoire.com
+# Contact: contact@marcheiivoire.com
+# Dernière mise à jour: 2025-01-15

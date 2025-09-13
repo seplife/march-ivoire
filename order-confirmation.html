@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmation de votre commande sur MarchéIvoire - Merci pour votre achat">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Commande confirmée - MarchéIvoire</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <style>
+        .confirmation-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .confirmation-header {
+            background: linear-gradient(135deg, var(--success) 0%, #20A745 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius-lg);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .confirmation-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .confirmation-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .confirmation-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .order-number {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .confirmation-content {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .order-summary-card,
+        .payment-info-card,
+        .delivery-info-card,
+        .next-steps-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--success);
+        }
+        
+        .card-title {
+            color: var(--dark);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .order-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-right: 1rem;
+            background: var(--gray-100);
+        }
+        
+        .item-details {
+            flex: 1;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+        
+        .item-quantity {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        .item-price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .order-totals {
+            border-top: 2px solid var(--gray-200);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .total-row.final {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-top: 1px solid var(--gray-300);
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .info-value {
+            color: var(--gray-700);
+            text-align: right;
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-processing {
+            background: #cce7ff;
+            color: #004085;
+        }
+        
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gray-300);
+            color: var(--dark);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .timeline {
+            margin-top: 1rem;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            bottom: -20px;
+            width: 2px;
+            background: var(--gray-200);
+        }
+        
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .timeline-icon.completed {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .timeline-icon.current {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .timeline-icon.pending {
+            background: var(--gray-200);
+            color: var(--gray-600);
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-time {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+        
+        .help-section {
+            background: var(--gray-100);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .help-title {
+            color: var(--dark);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .help-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .help-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .help-link:hover {
+            text-decoration: underline;
+        }
+        
+        .loading-state {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--gray-200);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        .error-state {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            color: var(--danger);
+        }
+        
+        .error-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .confirmation-container {
+                padding: 0 0.75rem;
+            }
+            
+            .confirmation-header {
+                padding: 2rem 1rem;
+            }
+            
+            .order-summary-card,
+            .payment-info-card,
+            .delivery-info-card,
+            .next-steps-card {
+                padding: 1.5rem;
+            }
+            
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .help-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .order-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .item-image {
+                width: 80px;
+                height: 80px;
+                margin-right: 0;
+            }
+        }
+        
+        @media print {
+            .action-buttons,
+            .help-section,
+            header,
+            footer {
+                display: none !important;
+            }
+            
+            .confirmation-container {
+                max-width: none;
+                margin: 0;
+            }
+            
+            .confirmation-header {
+                background: none !important;
+                color: var(--dark) !important;
+                border: 2px solid var(--gray-300);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header simplifié -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">🛒 MarchéIvoire</a>
+            <div class="nav-menu">
+                <a href="/" class="nav-link">← Retour au site</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="confirmation-container">
+        <!-- État de chargement -->
+        <div class="loading-state" id="loadingState">
+            <div class="loading-spinner"></div>
+            <h3>Chargement de votre commande...</h3>
+            <p>Veuillez patienter pendant que nous récupérons les détails de votre commande.</p>
+        </div>
+
+        <!-- État d'erreur -->
+        <div class="error-state" id="errorState">
+            <div class="error-icon">❌</div>
+            <h3>Erreur de chargement</h3>
+            <p>Impossible de charger les détails de votre commande.</p>
+            <button class="btn btn-primary" onclick="loadOrderDetails()">Réessayer</button>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="confirmation-main" id="confirmationMain" style="display: none;">
+            <!-- En-tête de confirmation -->
+            <div class="confirmation-header">
+                <div class="success-icon">🎉</div>
+                <h1 class="confirmation-title">Commande confirmée !</h1>
+                <p class="confirmation-subtitle">
+                    Merci pour votre achat ! Votre commande a été reçue et est en cours de traitement.
+                </p>
+                <div class="order-number" id="orderNumber">
+                    Commande #LOADING...
+                </div>
+                <p>Vous recevrez un email de confirmation sous peu.</p>
+            </div>
+
+            <div class="confirmation-content">
+                <!-- Résumé de commande -->
+                <div class="order-summary-card">
+                    <h2 class="card-title">
+                        📋 Résumé de votre commande
+                    </h2>
+                    <div id="orderItems">
+                        <!-- Items seront chargés dynamiquement -->
+                    </div>
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Sous-total</span>
+                            <span id="subtotal">0 FCFA</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Livraison</span>
+                            <span id="shipping">0 FCFA</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Taxes</span>
+                            <span id="taxes">0 FCFA</span>
+                        </div>
+                        <div class="total-row final">
+                            <span>Total</span>
+                            <span id="finalTotal">0 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informations de paiement -->
+                <div class="payment-info-card">
+                    <h2 class="card-title">
+                        💳 Informations de paiement
+                    </h2>
+                    <div class="info-row">
+                        <span class="info-label">Méthode de paiement</span>
+                        <span class="info-value" id="paymentMethod">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Statut du paiement</span>
+                        <span class="info-value">
+                            <span class="status-badge status-success" id="paymentStatus">Payé</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">ID de transaction</span>
+                        <span class="info-value" id="transactionId">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Date de paiement</span>
+                        <span class="info-value" id="paymentDate">-</span>
+                    </div>
+                </div>
+
+                <!-- Informations de livraison -->
+                <div class="delivery-info-card">
+                    <h2 class="card-title">
+                        🚚 Informations de livraison
+                    </h2>
+                    <div class="info-row">
+                        <span class="info-label">Destinataire</span>
+                        <span class="info-value" id="customerName">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Adresse</span>
+                        <span class="info-value" id="deliveryAddress">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Téléphone</span>
+                        <span class="info-value" id="customerPhone">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Livraison estimée</span>
+                        <span class="info-value" id="estimatedDelivery">2-3 jours ouvrables</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Statut de livraison</span>
+                        <span class="info-value">
+                            <span class="status-badge status-processing" id="deliveryStatus">En préparation</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Prochaines étapes -->
+                <div class="next-steps-card">
+                    <h2 class="card-title">
+                        📅 Suivi de votre commande
+                    </h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon completed">✓</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Commande passée</div>
+                                <div class="timeline-time" id="orderDate">Aujourd'hui</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon completed">✓</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Paiement confirmé</div>
+                                <div class="timeline-time" id="paymentConfirmedTime">Quelques minutes</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon current">📦</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Préparation en cours</div>
+                                <div class="timeline-time">En cours...</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon pending">🚚</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Expédition</div>
+                                <div class="timeline-time">Sous 24h</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon pending">🏠</div>
+                            <div class="timeline-content">
+                                <div class="timeline-title">Livraison</div>
+                                <div class="timeline-time">2-3 jours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons d'action -->
+            <div class="action-buttons">
+                <a href="/" class="btn-icon btn-primary">
+                    🛒 Continuer mes achats
+                </a>
+                <a href="#" class="btn-icon btn-outline" onclick="window.print()">
+                    🖨️ Imprimer la facture
+                </a>
+                <a href="#" class="btn-icon btn-success" id="trackOrderBtn">
+                    📍 Suivre ma commande
+                </a>
+                <a href="#" class="btn-icon btn-outline" onclick="shareOrder()">
+                    📤 Partager
+                </a>
+            </div>
+
+            <!-- Section d'aide -->
+            <div class="help-section">
+                <h3 class="help-title">Besoin d'aide ?</h3>
+                <p>Notre équipe est là pour vous accompagner</p>
+                <div class="help-links">
+                    <a href="tel:+22527223456" class="help-link">📞 Nous appeler</a>
+                    <a href="mailto:support@marcheiivoire.com" class="help-link">📧 Nous écrire</a>
+                    <a href="https://wa.me/2250102030405" class="help-link">💬 WhatsApp</a>
+                    <a href="/faq.html" class="help-link">❓ FAQ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script>
+        // Charger les détails de commande au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderDetails();
+        });
+
+        async function loadOrderDetails() {
+            showLoading();
+            
+            try {
+                // Récupérer l'ID de commande depuis l'URL ou sessionStorage
+                const urlParams = new URLSearchParams(window.location.search);
+                const orderId = urlParams.get('order') || sessionStorage.getItem('lastOrderId');
+                
+                if (!orderId) {
+                    // Essayer de récupérer depuis sessionStorage (après redirection paiement)
+                    const lastOrder = sessionStorage.getItem('lastOrder');
+                    if (lastOrder) {
+                        const order = JSON.parse(lastOrder);
+                        displayOrderDetails(order);
+                        return;
+                    }
+                    throw new Error('Aucun ID de commande trouvé');
+                }
+                
+                // En production, faire un appel API pour récupérer les détails
+                // const response = await fetch(`/admin/api.php?action=verify_order&order_id=${orderId}`);
+                // const data = await response.json();
+                
+                // Pour la démo, utiliser des données d'exemple
+                const order = generateDemoOrder(orderId);
+                displayOrderDetails(order);
+                
+                // Nettoyer sessionStorage
+                sessionStorage.removeItem('lastOrder');
+                sessionStorage.removeItem('lastOrderId');
+                
+            } catch (error) {
+                console.error('Erreur lors du chargement de la commande:', error);
+                showError();
+            }
+        }
+
+        function generateDemoOrder(orderId) {
+            return {
+                id: orderId || 'ORDER_' + Date.now(),
+                customerInfo: {
+                    firstName: 'Kouadio',
+                    lastName: 'Yao',
+                    email: 'kouadio.yao@gmail.com',
+                    phone: '+225 01 02 03 04 05',
+                    address: 'Rue 12, Quartier Biétry, Commune de Marcory, Abidjan'
+                },
+                items: [
+                    {
+                        productId: 1,
+                        productTitle: 'Bananes Plantain Bio',
+                        quantity: 2,
+                        unitPrice: 2500,
+                        totalPrice: 5000,
+                        image: 'https://picsum.photos/80/80?random=1'
+                    },
+                    {
+                        productId: 3,
+                        productTitle: 'Piment Rouge Séché',
+                        quantity: 1,
+                        unitPrice: 850,
+                        totalPrice: 850,
+                        image: 'https://picsum.photos/80/80?random=3'
+                    }
+                ],
+                subtotal: 5850,
+                shipping: 2000,
+                taxes: 0,
+                total: 7850,
+                paymentMethod: 'Orange Money',
+                paymentStatus: 'paid',
+                transactionId: 'TXN_' + Date.now(),
+                status: 'processing',
+                createdAt: new Date().toISOString(),
+                paidAt: new Date().toISOString()
+            };
+        }
+
+        function displayOrderDetails(order) {
+            hideLoading();
+            showConfirmation();
+            
+            // Numéro de commande
+            document.getElementById('orderNumber').textContent = `Commande #${order.id}`;
+            
+            // Items de commande
+            const itemsContainer = document.getElementById('orderItems');
+            itemsContainer.innerHTML = '';
+            
+            order.items.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'order-item';
+                itemElement.innerHTML = `
+                    <img src="${item.image || 'https://picsum.photos/80/80?random=' + item.productId}" 
+                         alt="${item.productTitle}" class="item-image"
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjBGMEYwIi8+Cjx0ZXh0IHg9IjQwIiB5PSI0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk5OSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIj5JbWFnZTwvdGV4dD4KPHN2Zz4K'">
+                    <div class="item-details">
+                        <div class="item-title">${item.productTitle}</div>
+                        <div class="item-quantity">Quantité: ${item.quantity}</div>
+                    </div>
+                    <div class="item-price">${formatPrice(item.totalPrice)}</div>
+                `;
+                itemsContainer.appendChild(itemElement);
+            });
+            
+            // Totaux
+            document.getElementById('subtotal').textContent = formatPrice(order.subtotal);
+            document.getElementById('shipping').textContent = formatPrice(order.shipping);
+            document.getElementById('taxes').textContent = formatPrice(order.taxes || 0);
+            document.getElementById('finalTotal').textContent = formatPrice(order.total);
+            
+            // Informations de paiement
+            document.getElementById('paymentMethod').textContent = order.paymentMethod;
+            document.getElementById('transactionId').textContent = order.transactionId;
+            document.getElementById('paymentDate').textContent = formatDate(order.paidAt);
+            
+            // Informations de livraison
+            document.getElementById('customerName').textContent = 
+                `${order.customerInfo.firstName} ${order.customerInfo.lastName}`;
+            document.getElementById('deliveryAddress').textContent = order.customerInfo.address;
+            document.getElementById('customerPhone').textContent = order.customerInfo.phone;
+            
+            // Dates
+            document.getElementById('orderDate').textContent = formatRelativeTime(order.createdAt);
+            document.getElementById('paymentConfirmedTime').textContent = formatRelativeTime(order.paidAt);
+            
+            // Lien de suivi
+            document.getElementById('trackOrderBtn').href = `/track-order.html?id=${order.id}`;
+            
+            // Analytics
+            trackOrderConfirmation(order);
+        }
+
+        function showLoading() {
+            document.getElementById('loadingState').style.display = 'block';
+            document.getElementById('errorState').style.display = 'none';
+            document.getElementById('confirmationMain').style.display = 'none';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingState').style.display = 'none';
+        }
+
+        function showError() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('errorState').style.display = 'block';
+            document.getElementById('confirmationMain').style.display = 'none';
+        }
+
+        function showConfirmation() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('errorState').style.display = 'none';
+            document.getElementById('confirmationMain').style.display = 'block';
+        }
+
+        function shareOrder() {
+            const orderId = document.getElementById('orderNumber').textContent;
+            const shareData = {
+                title: 'Ma commande MarchéIvoire',
+                text: `J'ai passé une commande sur MarchéIvoire ! ${orderId}`,
+                url: window.location.href
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData).catch(console.error);
+            } else {
+                // Fallback - copier le lien
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    showNotification('Lien copié dans le presse-papiers', 'success');
+                }).catch(() => {
+                    showNotification('Impossible de copier le lien', 'error');
+                });
+            }
+        }
+
+        function trackOrderConfirmation(order) {
+            if (!getConfig('SEO.TRACK_PURCHASES', true)) return;
+            
+            try {
+                // Google Analytics 4 - Purchase event
+                if (typeof gtag === 'function') {
+                    gtag('event', 'purchase', {
+                        transaction_id: order.id,
+                        value: order.total,
+                        currency: 'XOF',
+                        items: order.items.map(item => ({
+                            item_id: item.productId,
+                            item_name: item.productTitle,
+                            quantity: item.quantity,
+                            price: item.unitPrice
+                        }))
+                    });
+                }
+                
+                // Facebook Pixel - Purchase event
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Purchase', {
+                        value: order.total,
+                        currency: 'XOF',
+                        content_ids: order.items.map(item => item.productId),
+                        content_type: 'product',
+                        contents: order.items.map(item => ({
+                            id: item.productId,
+                            quantity: item.quantity,
+                            item_price: item.unitPrice
+                        }))
+                    });
+                }
+                
+                console.log('Order confirmation tracked:', order.id);
+            } catch (error) {
+                console.warn('Erreur tracking confirmation:', error);
+            }
+        }
+
+        // Gestion des erreurs réseau
+        window.addEventListener('offline', function() {
+            if (typeof showNotification === 'function') {
+                showNotification('Connexion perdue. Vos informations sont sauvegardées.', 'warning');
+            }
+        });
+
+        window.addEventListener('online', function() {
+            if (typeof showNotification === 'function') {
+                showNotification('Connexion rétablie', 'success');
+            }
+        });
+
+        // Empêcher la fermeture accidentelle de la page
+        window.addEventListener('beforeunload', function(e) {
+            // Permettre la fermeture après 30 secondes
+            if (Date.now() - window.loadTime < 30000) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+
+        // Enregistrer le temps de chargement
+        window.loadTime = Date.now();
+
+        // Fonctions utilitaires si pas chargées
+        if (typeof formatPrice !== 'function') {
+            function formatPrice(price) {
+                return new Intl.NumberFormat('fr-FR').format(price) + ' FCFA';
+            }
+        }
+
+        if (typeof formatDate !== 'function') {
+            function formatDate(date) {
+                return new Date(date).toLocaleDateString('fr-FR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+        }
+
+        if (typeof formatRelativeTime !== 'function') {
+            function formatRelativeTime(date) {
+                const now = new Date();
+                const diffMs = now - new Date(date);
+                const diffMins = Math.floor(diffMs / 60000);
+                
+                if (diffMins < 1) return 'À l\'instant';
+                if (diffMins < 60) return `Il y a ${diffMins} minute${diffMins > 1 ? 's' : ''}`;
+                
+                const diffHours = Math.floor(diffMins / 60);
+                if (diffHours < 24) return `Il y a ${diffHours} heure${diffHours > 1 ? 's' : ''}`;
+                
+                const diffDays = Math.floor(diffHours / 24);
+                return `Il y a ${diffDays} jour${diffDays > 1 ? 's' : ''}`;
+            }
+        }
+
+        if (typeof getConfig !== 'function') {
+            function getConfig(path, defaultValue) {
+                return defaultValue;
+            }
+        }
+
+        if (typeof showNotification !== 'function') {
+            function showNotification(message, type) {
+                console.log(`[${type.toUpperCase()}] ${message}`);
+            }
+        }
+    </script>
+</body>
+</html>
+    </script>
+</body>
+</html>

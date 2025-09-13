@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarchéIvoire - Votre marketplace ivoirienne en ligne. Achetez et vendez des produits locaux avec paiement Mobile Money.">
+    <meta name="keywords" content="marché, Côte d'Ivoire, e-commerce, mobile money, produits locaux">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="MarchéIvoire - Marketplace Ivoirienne">
+    <meta property="og:description" content="Découvrez les meilleurs produits locaux de Côte d'Ivoire">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marcheiivoire.com">
+    <title>MarchéIvoire - Marketplace Ivoirienne</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF6B35">
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --secondary: #FFA500;
+            --success: #28A745;
+            --warning: #FFC107;
+            --danger: #DC3545;
+            --dark: #2C3E50;
+            --light: #F8F9FA;
+            --white: #FFFFFF;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--light);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="/" class="logo">🛒 MarchéIvoire</a>
+            <div class="nav-menu">
+                <a href="#produits" class="nav-link">Produits</a>
+                <a href="#categories" class="nav-link">Catégories</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="cart-btn" id="cartBtn">
+                    🛍️ Panier (<span id="cartCount">0</span>)
+                </button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Bienvenue sur MarchéIvoire</h1>
+            <p>Découvrez les meilleurs produits locaux de Côte d'Ivoire</p>
+            <p>Paiement sécurisé avec Mobile Money • Livraison rapide</p>
+            <a href="#produits" class="btn">Voir les produits</a>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-filter-bar">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+                    <button type="button" id="searchBtn">🔍</button>
+                </div>
+                <div class="filter-controls">
+                    <select id="categoryFilter">
+                        <option value="">Toutes catégories</option>
+                    </select>
+                    <select id="priceFilter">
+                        <option value="">Tous prix</option>
+                        <option value="0-5000">0 - 5,000 FCFA</option>
+                        <option value="5000-15000">5,000 - 15,000 FCFA</option>
+                        <option value="15000-50000">15,000 - 50,000 FCFA</option>
+                        <option value="50000+">50,000+ FCFA</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section">
+        <div class="container">
+            <h2>Catégories populaires</h2>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produits" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos produits</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">⊞</button>
+                    <button class="view-btn" data-view="list">☰</button>
+                </div>
+            </div>
+            
+            <!-- Loading State -->
+            <div class="loading" id="productsLoading">
+                <div class="spinner"></div>
+                <p>Chargement des produits...</p>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Dynamically loaded products -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn load-more-btn" id="loadMoreBtn" style="display: none;">
+                    Charger plus de produits
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>Pourquoi choisir MarchéIvoire ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Paiement Mobile Money</h3>
+                    <p>Orange Money, MTN Money, Moov Money acceptés</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Livraison rapide</h3>
+                    <p>Livraison dans toute la Côte d'Ivoire</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Paiement sécurisé</h3>
+                    <p>Transactions sécurisées via CinetPay</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇨🇮</div>
+                    <h3>Produits locaux</h3>
+                    <p>Support à l'économie ivoirienne</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MarchéIvoire</h3>
+                    <p>Votre marketplace ivoirienne de confiance</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="WhatsApp">📱</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="#produits">Produits</a></li>
+                        <li><a href="#categories">Catégories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="privacy.html">Confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📧 contact@marcheiivoire.com</p>
+                    <p>📞 +225 XX XX XX XX XX</p>
+                    <p>📍 Abidjan, Côte d'Ivoire</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MarchéIvoire. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Votre panier</h3>
+                <button class="close-modal" id="closeCartModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">0</span> FCFA</strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="clearCartBtn">Vider le panier</button>
+                <button class="btn btn-primary" id="checkoutBtn">Commander</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content product-modal-content">
+            <div class="modal-header">
+                <button class="close-modal" id="closeProductModal">&times;</button>
+            </div>
+            <div class="modal-body" id="productModalBody">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(registrationError => console.log('SW registration failed'));
+            });
+        }
+    </script>
+</body>
+</html>

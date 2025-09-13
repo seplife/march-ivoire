@@ -1,0 +1,690 @@
+{
+  "site": {
+    "name": "MarchéIvoire",
+    "tagline": "Votre marketplace ivoirienne de confiance",
+    "description": "Achetez et vendez des produits locaux de qualité avec paiement Mobile Money sécurisé",
+    "url": "https://marcheiivoire.com",
+    "logo": "assets/images/logo-192.png",
+    "favicon": "assets/images/favicon.ico",
+    "language": "fr",
+    "timezone": "Africa/Abidjan",
+    "currency": "XOF",
+    "currency_symbol": "FCFA",
+    "version": "1.0.0",
+    "maintenance_mode": false,
+    "launch_date": "2025-01-15"
+  },
+  
+  "contact": {
+    "company_name": "MarchéIvoire SARL",
+    "email": "contact@marcheiivoire.com",
+    "support_email": "support@marcheiivoire.com",
+    "phone": "+225 27 22 XX XX XX",
+    "whatsapp": "+225 01 02 03 04 05",
+    "address": {
+      "street": "Boulevard de la République",
+      "city": "Abidjan",
+      "district": "Plateau",
+      "postal_code": "08 BP 2044 Abidjan 08",
+      "country": "Côte d'Ivoire"
+    },
+    "social_media": {
+      "facebook": "https://facebook.com/marcheiivoire",
+      "instagram": "https://instagram.com/marcheiivoire",
+      "twitter": "https://twitter.com/marcheiivoire",
+      "linkedin": "https://linkedin.com/company/marcheiivoire",
+      "youtube": "https://youtube.com/@marcheiivoire"
+    }
+  },
+  
+  "business": {
+    "registration_number": "CI-ABJ-2025-B-12345",
+    "tax_number": "0123456789",
+    "bank_account": {
+      "bank_name": "Banque Atlantique Côte d'Ivoire",
+      "account_number": "CI05 BI01 0001 2345 6789 0123 45",
+      "swift_code": "BIATCIABXXX"
+    },
+    "business_hours": {
+      "monday": "08:00-18:00",
+      "tuesday": "08:00-18:00",
+      "wednesday": "08:00-18:00",
+      "thursday": "08:00-18:00",
+      "friday": "08:00-18:00",
+      "saturday": "09:00-16:00",
+      "sunday": "closed"
+    }
+  },
+  
+  "ecommerce": {
+    "catalog": {
+      "products_per_page": 12,
+      "max_products_per_page": 50,
+      "enable_reviews": true,
+      "enable_ratings": true,
+      "auto_approve_reviews": false,
+      "min_review_length": 10,
+      "max_review_length": 500,
+      "enable_product_comparison": true,
+      "enable_wishlist": true,
+      "enable_product_zoom": true,
+      "image_quality": 90,
+      "thumbnail_size": "200x150",
+      "medium_size": "400x300",
+      "large_size": "800x600"
+    },
+    
+    "cart": {
+      "session_timeout": 3600,
+      "max_items_per_order": 50,
+      "enable_guest_checkout": true,
+      "require_account_creation": false,
+      "abandoned_cart_recovery": true,
+      "abandoned_cart_email_delay": 3600,
+      "cart_persistence": "localStorage"
+    },
+    
+    "checkout": {
+      "require_phone": true,
+      "require_address": true,
+      "enable_order_notes": true,
+      "enable_delivery_date_selection": false,
+      "enable_gift_messages": false,
+      "terms_and_conditions_required": true,
+      "privacy_policy_required": true,
+      "newsletter_opt_in": true,
+      "order_confirmation_email": true,
+      "admin_notification_email": true
+    },
+    
+    "shipping": {
+      "default_cost": 2000,
+      "free_shipping_threshold": 50000,
+      "zones": [
+        {
+          "name": "Abidjan",
+          "cities": ["Abidjan"],
+          "cost": 2000,
+          "delivery_time": "1-2 jours"
+        },
+        {
+          "name": "Grandes villes",
+          "cities": ["Bouaké", "Yamoussoukro", "Daloa", "Korhogo", "San-Pédro", "Man"],
+          "cost": 3000,
+          "delivery_time": "2-3 jours"
+        },
+        {
+          "name": "Autres villes",
+          "cities": ["Autres"],
+          "cost": 5000,
+          "delivery_time": "3-5 jours"
+        }
+      ],
+      "weight_based_shipping": false,
+      "international_shipping": false
+    },
+    
+    "inventory": {
+      "track_stock": true,
+      "allow_backorders": false,
+      "low_stock_threshold": 5,
+      "out_of_stock_threshold": 0,
+      "hide_out_of_stock": false,
+      "stock_management": "automatic",
+      "reserve_stock_minutes": 60
+    },
+    
+    "pricing": {
+      "display_currency": "XOF",
+      "price_includes_tax": true,
+      "tax_rate": 0.18,
+      "enable_promotions": true,
+      "enable_coupons": true,
+      "enable_bulk_discounts": true,
+      "price_rounding": "round"
+    }
+  },
+  
+  "payments": {
+    "enabled_methods": ["orange_money", "mtn_money", "moov_money", "wave"],
+    "default_method": "orange_money",
+    
+    "cinetpay": {
+      "enabled": true,
+      "mode": "live",
+      "api_key": "votre_api_key_cinetpay",
+      "site_id": "votre_site_id_cinetpay",
+      "secret_key": "votre_secret_key_cinetpay",
+      "webhook_url": "https://marcheiivoire.com/admin/webhook.php",
+      "return_url": "https://marcheiivoire.com/order-confirmation.html",
+      "cancel_url": "https://marcheiivoire.com/checkout.html",
+      "notify_url": "https://marcheiivoire.com/admin/webhook.php",
+      "currency": "XOF",
+      "description_prefix": "Commande MarchéIvoire #",
+      "payment_methods": {
+        "orange_money": {
+          "enabled": true,
+          "name": "Orange Money",
+          "icon": "🟠",
+          "description": "Paiement sécurisé via Orange Money"
+        },
+        "mtn_money": {
+          "enabled": true,
+          "name": "MTN Money",
+          "icon": "🟡",
+          "description": "Paiement sécurisé via MTN Money"
+        },
+        "moov_money": {
+          "enabled": true,
+          "name": "Moov Money",
+          "icon": "🔵",
+          "description": "Paiement sécurisé via Moov Money"
+        },
+        "wave": {
+          "enabled": true,
+          "name": "Wave",
+          "icon": "🌊",
+          "description": "Paiement sécurisé via Wave"
+        }
+      }
+    },
+    
+    "bank_transfer": {
+      "enabled": false,
+      "account_details": {
+        "bank_name": "Banque Atlantique Côte d'Ivoire",
+        "account_holder": "MarchéIvoire SARL",
+        "account_number": "CI05 BI01 0001 2345 6789 0123 45",
+        "swift_code": "BIATCIABXXX"
+      }
+    },
+    
+    "cash_on_delivery": {
+      "enabled": false,
+      "additional_fee": 1000,
+      "max_amount": 100000
+    }
+  },
+  
+  "emails": {
+    "enabled": true,
+    "smtp": {
+      "host": "smtp.marcheiivoire.com",
+      "port": 587,
+      "username": "noreply@marcheiivoire.com",
+      "password": "votre_mot_de_passe_smtp",
+      "encryption": "tls",
+      "from_email": "noreply@marcheiivoire.com",
+      "from_name": "MarchéIvoire"
+    },
+    
+    "templates": {
+      "order_confirmation": {
+        "enabled": true,
+        "subject": "Confirmation de commande #{{order_id}} - MarchéIvoire",
+        "send_to_customer": true,
+        "send_to_admin": true
+      },
+      "payment_confirmation": {
+        "enabled": true,
+        "subject": "Paiement confirmé pour la commande #{{order_id}}",
+        "send_to_customer": true,
+        "send_to_admin": true
+      },
+      "payment_failed": {
+        "enabled": true,
+        "subject": "Problème avec le paiement de votre commande #{{order_id}}",
+        "send_to_customer": true,
+        "send_to_admin": true
+      },
+      "order_shipped": {
+        "enabled": true,
+        "subject": "Votre commande #{{order_id}} a été expédiée",
+        "send_to_customer": true,
+        "send_to_admin": false
+      },
+      "order_delivered": {
+        "enabled": true,
+        "subject": "Votre commande #{{order_id}} a été livrée",
+        "send_to_customer": true,
+        "send_to_admin": false
+      }
+    },
+    
+    "notifications": {
+      "new_order": ["admin@marcheiivoire.com", "orders@marcheiivoire.com"],
+      "low_stock": ["admin@marcheiivoire.com", "stock@marcheiivoire.com"],
+      "payment_received": ["admin@marcheiivoire.com", "finance@marcheiivoire.com"],
+      "system_errors": ["tech@marcheiivoire.com"]
+    }
+  },
+  
+  "seo": {
+    "meta_title": "MarchéIvoire - Marketplace Ivoirienne | Produits Locaux & Mobile Money",
+    "meta_description": "Découvrez MarchéIvoire, la marketplace #1 de Côte d'Ivoire. Achetez des produits locaux de qualité avec paiement Mobile Money sécurisé. Livraison rapide dans toute la CI.",
+    "meta_keywords": "marketplace, côte d'ivoire, mobile money, orange money, mtn money, produits locaux, e-commerce, abidjan, livraison",
+    "canonical_url": "https://marcheiivoire.com",
+    "robots": "index, follow",
+    "sitemap_enabled": true,
+    "google_analytics": "G-XXXXXXXXXX",
+    "google_tag_manager": "GTM-XXXXXXX",
+    "facebook_pixel": "123456789012345",
+    "structured_data": {
+      "organization": true,
+      "website": true,
+      "products": true,
+      "breadcrumbs": true,
+      "reviews": true
+    }
+  },
+  
+  "security": {
+    "ssl_required": true,
+    "session_timeout": 3600,
+    "max_login_attempts": 5,
+    "lockout_duration": 900,
+    "password_min_length": 8,
+    "require_strong_passwords": true,
+    "two_factor_auth": false,
+    "ip_whitelist": [],
+    "ip_blacklist": [],
+    "enable_captcha": false,
+    "captcha_provider": "recaptcha",
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 60,
+      "requests_per_hour": 1000
+    },
+    "security_headers": {
+      "x_frame_options": "DENY",
+      "x_content_type_options": "nosniff",
+      "x_xss_protection": "1; mode=block",
+      "strict_transport_security": "max-age=31536000; includeSubDomains"
+    }
+  },
+  
+  "performance": {
+    "cache_enabled": true,
+    "cache_duration": 3600,
+    "image_optimization": {
+      "enabled": true,
+      "webp_support": true,
+      "lazy_loading": true,
+      "compression_quality": 85
+    },
+    "minification": {
+      "css": true,
+      "js": true,
+      "html": false
+    },
+    "cdn": {
+      "enabled": false,
+      "provider": "",
+      "url": ""
+    },
+    "gzip_compression": true
+  },
+  
+  "analytics": {
+    "enable_tracking": true,
+    "track_page_views": true,
+    "track_events": true,
+    "track_conversions": true,
+    "track_user_behavior": true,
+    "anonymize_ip": true,
+    "retention_days": 365,
+    "dashboard_widgets": [
+      "total_orders",
+      "total_revenue",
+      "conversion_rate",
+      "average_order_value",
+      "top_products",
+      "traffic_sources",
+      "customer_locations"
+    ]
+  },
+  
+  "integrations": {
+    "social_login": {
+      "facebook": {
+        "enabled": false,
+        "app_id": "",
+        "app_secret": ""
+      },
+      "google": {
+        "enabled": false,
+        "client_id": "",
+        "client_secret": ""
+      }
+    },
+    
+    "social_sharing": {
+      "facebook": true,
+      "twitter": true,
+      "whatsapp": true,
+      "telegram": false,
+      "linkedin": false
+    },
+    
+    "third_party_services": {
+      "google_maps": {
+        "enabled": false,
+        "api_key": ""
+      },
+      "mailchimp": {
+        "enabled": false,
+        "api_key": "",
+        "list_id": ""
+      },
+      "intercom": {
+        "enabled": false,
+        "app_id": ""
+      }
+    }
+  },
+  
+  "mobile_app": {
+    "pwa_enabled": true,
+    "app_name": "MarchéIvoire",
+    "app_short_name": "MarchéIvoire",
+    "theme_color": "#FF6B35",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/",
+    "scope": "/",
+    "push_notifications": {
+      "enabled": false,
+      "vapid_public_key": "",
+      "vapid_private_key": ""
+    }
+  },
+  
+  "legal": {
+    "terms_of_service_url": "/terms.html",
+    "privacy_policy_url": "/privacy.html",
+    "return_policy_url": "/returns.html",
+    "shipping_policy_url": "/shipping.html",
+    "cookie_policy_url": "/cookies.html",
+    "gdpr_compliance": false,
+    "ccpa_compliance": false,
+    "age_verification_required": false,
+    "minimum_age": 18,
+    "return_policy": {
+      "enabled": true,
+      "return_window_days": 14,
+      "refund_processing_days": 7,
+      "return_shipping_cost": "customer",
+      "restocking_fee": 0,
+      "returnable_items": ["clothing", "electronics", "handicrafts"],
+      "non_returnable_items": ["food", "perishables", "custom_items"]
+    }
+  },
+  
+  "localization": {
+    "default_language": "fr",
+    "available_languages": ["fr", "en"],
+    "currency_format": {
+      "decimal_separator": ",",
+      "thousands_separator": " ",
+      "currency_position": "after",
+      "currency_spacing": true
+    },
+    "date_format": "d/m/Y",
+    "time_format": "H:i",
+    "timezone_display": "Africa/Abidjan",
+    "rtl_support": false,
+    "translations": {
+      "fr": {
+        "site_name": "MarchéIvoire",
+        "welcome_message": "Bienvenue sur MarchéIvoire",
+        "currency_name": "Franc CFA",
+        "free_shipping_message": "Livraison gratuite à partir de 50 000 FCFA"
+      },
+      "en": {
+        "site_name": "MarchéIvoire",
+        "welcome_message": "Welcome to MarchéIvoire",
+        "currency_name": "CFA Franc",
+        "free_shipping_message": "Free shipping from 50,000 FCFA"
+      }
+    }
+  },
+  
+  "customer_service": {
+    "support_channels": {
+      "email": {
+        "enabled": true,
+        "address": "support@marcheiivoire.com",
+        "response_time": "24h"
+      },
+      "phone": {
+        "enabled": true,
+        "number": "+225 27 22 XX XX XX",
+        "hours": "Lun-Ven 8h-18h, Sam 9h-16h"
+      },
+      "whatsapp": {
+        "enabled": true,
+        "number": "+225 01 02 03 04 05",
+        "hours": "Lun-Dim 8h-20h"
+      },
+      "live_chat": {
+        "enabled": false,
+        "provider": "",
+        "hours": "Lun-Ven 9h-17h"
+      }
+    },
+    
+    "help_center": {
+      "enabled": true,
+      "faq_categories": [
+        "Commande et paiement",
+        "Livraison et retours",
+        "Compte client",
+        "Produits et garanties",
+        "Mobile Money",
+        "Sécurité"
+      ],
+      "search_enabled": true,
+      "rating_enabled": true
+    },
+    
+    "order_tracking": {
+      "enabled": true,
+      "tracking_url": "https://marcheiivoire.com/track-order",
+      "sms_notifications": false,
+      "email_notifications": true,
+      "status_updates": [
+        "pending",
+        "confirmed",
+        "preparing",
+        "shipped",
+        "out_for_delivery",
+        "delivered",
+        "cancelled"
+      ]
+    }
+  },
+  
+  "marketing": {
+    "newsletter": {
+      "enabled": true,
+      "provider": "mailchimp",
+      "double_opt_in": true,
+      "welcome_email": true,
+      "unsubscribe_page": true
+    },
+    
+    "promotions": {
+      "enabled": true,
+      "coupon_codes": true,
+      "automatic_discounts": true,
+      "flash_sales": true,
+      "loyalty_program": false,
+      "referral_program": false,
+      "affiliate_program": false
+    },
+    
+    "abandoned_cart": {
+      "enabled": true,
+      "email_sequence": [
+        {
+          "delay_hours": 1,
+          "subject": "Vous avez oublié quelque chose dans votre panier",
+          "discount": 0
+        },
+        {
+          "delay_hours": 24,
+          "subject": "Votre panier vous attend - 5% de réduction",
+          "discount": 5
+        },
+        {
+          "delay_hours": 72,
+          "subject": "Dernière chance - 10% de réduction",
+          "discount": 10
+        }
+      ]
+    },
+    
+    "product_recommendations": {
+      "enabled": true,
+      "related_products": true,
+      "cross_sell": true,
+      "up_sell": true,
+      "recently_viewed": true,
+      "trending_products": true
+    }
+  },
+  
+  "vendor_management": {
+    "multi_vendor": false,
+    "vendor_registration": false,
+    "vendor_approval_required": true,
+    "commission_rate": 15,
+    "vendor_dashboard": false,
+    "vendor_payments": "manual",
+    "vendor_reviews": false
+  },
+  
+  "content_management": {
+    "blog_enabled": false,
+    "pages_enabled": true,
+    "media_library": true,
+    "seo_tools": true,
+    "content_versioning": false,
+    "scheduled_publishing": false,
+    "content_approval": false
+  },
+  
+  "backup_and_maintenance": {
+    "auto_backup": {
+      "enabled": true,
+      "frequency": "daily",
+      "retention_days": 30,
+      "backup_location": "local",
+      "include_uploads": true,
+      "include_database": true
+    },
+    
+    "maintenance": {
+      "auto_updates": false,
+      "maintenance_mode": false,
+      "maintenance_message": "Site en maintenance. Nous reviendrons bientôt !",
+      "allowed_ips": ["127.0.0.1"],
+      "scheduled_maintenance": []
+    },
+    
+    "monitoring": {
+      "uptime_monitoring": false,
+      "error_logging": true,
+      "performance_monitoring": false,
+      "security_scanning": false
+    }
+  },
+  
+  "api_settings": {
+    "rest_api": {
+      "enabled": true,
+      "version": "v1",
+      "rate_limiting": true,
+      "authentication": "api_key",
+      "cors_enabled": true,
+      "allowed_origins": ["https://marcheiivoire.com"]
+    },
+    
+    "webhooks": {
+      "enabled": true,
+      "endpoints": [
+        {
+          "name": "cinetpay_webhook",
+          "url": "https://marcheiivoire.com/admin/webhook.php",
+          "events": ["payment.completed", "payment.failed", "payment.pending"],
+          "secret": "webhook_secret_key_123456"
+        }
+      ],
+      "retry_attempts": 3,
+      "timeout": 30
+    },
+    
+    "external_apis": {
+      "cinetpay": {
+        "base_url": "https://api-checkout.cinetpay.com/v2",
+        "timeout": 30,
+        "retry_attempts": 2
+      },
+      "sms_provider": {
+        "enabled": false,
+        "provider": "",
+        "api_key": "",
+        "sender_id": "MarchéIvoire"
+      }
+    }
+  },
+  
+  "development": {
+    "debug_mode": false,
+    "log_level": "info",
+    "error_reporting": true,
+    "profiling": false,
+    "test_mode": false,
+    "demo_data": false,
+    "staging_environment": false
+  },
+  
+  "compliance": {
+    "accessibility": {
+      "wcag_level": "AA",
+      "screen_reader_support": true,
+      "keyboard_navigation": true,
+      "high_contrast_mode": false,
+      "text_size_controls": false
+    },
+    
+    "privacy": {
+      "cookie_consent": true,
+      "data_retention_days": 365,
+      "anonymize_data": true,
+      "right_to_deletion": true,
+      "data_export": true,
+      "privacy_by_design": true
+    },
+    
+    "security_compliance": {
+      "pci_dss": false,
+      "iso_27001": false,
+      "penetration_testing": false,
+      "vulnerability_scanning": false,
+      "security_audits": false
+    }
+  },
+  
+  "metadata": {
+    "created_at": "2025-01-15T10:00:00Z",
+    "updated_at": "2025-01-15T15:30:00Z",
+    "version": "1.0.0",
+    "config_checksum": "abc123def456",
+    "last_backup": "2025-01-15T02:00:00Z",
+    "environment": "production",
+    "admin_user": "admin@marcheiivoire.com",
+    "installation_id": "marche_ivoire_001"
+  }
+}
